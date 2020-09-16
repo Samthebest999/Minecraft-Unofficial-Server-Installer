@@ -89,6 +89,7 @@ print('Creating "Click To Start Minecraft Server"')
 ctsmcsbc=open("Click To Start Minecraft Server.bat", "w+")
 ctsmcsbe=open("Click To Start Minecraft Server.bat", "a+")
 ctsmcsbe.write("java -Xmx1024M -Xms1024M -jar server.jar nogui")
+ctsmcsbe.write("pause")
 print("Done!")
 #Done!
 print("Remember to Download server.jar from the 'windows' folder and also to make this work you have to run python as Admin")
