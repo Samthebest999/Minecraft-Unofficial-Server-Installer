@@ -1,3 +1,6 @@
+import os
+os.system("pip install requests")
+import requests
 #By Samthebest999
 print("Thanks for using the installer[By Samthebest999] ;)")
 ips=input("What Do You Want The Server IP to be? (Just Hit Enter If You Just Want Your Standard Server IP):")
@@ -83,7 +86,7 @@ print("Done!!!")
 print("Creating usercache.json")
 ucjc=open("usercache.json", "w+")
 ucje=open("usercache.json", "a+")
-ucje.write("[]")""","a+")
+ucje.write("[]")""")
 print("Done!")
 print('Creating "Click To Start Minecraft Server"')
 ctsmcsbc=open("Click To Start Minecraft Server.bat", "w+")
@@ -92,4 +95,6 @@ ctsmcsbe.write("java -Xmx1024M -Xms1024M -jar server.jar nogui")
 ctsmcsbe.write("pause")
 print("Done!")
 #Done!
-print("Remember to Download server.jar from the 'windows' folder and also to make this work you have to run python as Admin")
+url = "https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar"
+r = requests.get(url, allow_redirects=True)
+open('server.jar', 'wb').write(r.content)
