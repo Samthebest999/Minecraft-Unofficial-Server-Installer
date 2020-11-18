@@ -1,4 +1,4 @@
-import os time
+import os, time
 os.system("pip install requests")
 import requests
 #By Samthebest999
@@ -12,35 +12,41 @@ eulatxturl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/eula.txt"
 bannedplayersjsonurl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/banned-players.json"
 bannedipsjsonurl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/banned-ips.json"
 serverjarurl = "https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar"
-r = requests.get(serverjarurl, allow_redirects=True)
-open('server.jar', 'wb').write(r.content)
-r = requests.get(bannedipsjsonurl, allow_redirects=True)
-open('banned-ips.json', 'wb').write(r.content)
+si = input("Would you like to start installation? Y/N (Case Sensitive)")
+if si == "Y":
+    a = requests.get(serverjarurl, allow_redirects=True)
+    open('server.jar', 'wb').write(a.content)
+    b = requests.get(bannedipsjsonurl, allow_redirects=True)
+    open('banned-ips.json', 'wb').write(b.content)
 
-r = requests.get(bannedplayersjsonurl, allow_redirects=True)
-open('banned-players.json', 'wb').write(r.content)
+    c = requests.get(bannedplayersjsonurl, allow_redirects=True)
+    open('banned-players.json', 'wb').write(c.content)
 
-r = requests.get(eulatxturl, allow_redirects=True)
-open('eula.txt', 'wb').write(r.content)
+    d = requests.get(eulatxturl, allow_redirects=True)
+    open('eula.txt', 'wb').write(d.content)
 
-r = requests.get(opsjsonurl, allow_redirects=True)
-open('ops.json', 'wb').write(r.content)
+    e = requests.get(opsjsonurl, allow_redirects=True)
+    open('ops.json', 'wb').write(e.content)
 
-r = requests.get(serverpropertiesurl, allow_redirects=True)
-open('server.properties', 'wb').write(r.content)
+    f = requests.get(serverpropertiesurl, allow_redirects=True)
+    open('server.properties', 'wb').write(f.content)
 
-r = requests.get(ssbaturl, allow_redirects=True)
-open('StartServer.bat', 'wb').write(r.content)
+    g = requests.get(ssbaturl, allow_redirects=True)
+    open('StartServer.bat', 'wb').write(g.content)
 
-r = requests.get(usercachejsonurl, allow_redirects=True)
-open('usercache.json', 'wb').write(r.content)
+    h = requests.get(usercachejsonurl, allow_redirects=True)
+    open('usercache.json', 'wb').write(h.content)
 
-r = requests.get(whitelistjsonurl, allow_redirects=True)
-open('whitelist.json', 'wb').write(r.content)
-print("Done")
-yon = input("Would You Like To Start Server Now?? Y/N (Case Sensitive)")
-if yon == Y:
-    os.system("StartServer.bat")
+    i = requests.get(whitelistjsonurl, allow_redirects=True)
+    open('whitelist.json', 'wb').write(i.content)
+    print("Done")
+    yon = input("Would You Like To Start Server Now?? Y/N (Case Sensitive)")
+    if yon == "Y":
+        os.system("StartServer.bat")
+    else :
+        print("Ok, Bye the installer will close in 10 seconds!")
+        time.sleep(11)
+        quit()
 else :
     print("Ok, Bye the installer will close in 10 seconds!")
     time.sleep(11)
