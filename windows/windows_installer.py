@@ -1,100 +1,47 @@
-import os
+import os time
 os.system("pip install requests")
 import requests
 #By Samthebest999
 print("Thanks for using the installer[By Samthebest999] ;)")
-ips=input("What Do You Want The Server IP to be? (Just Hit Enter If You Just Want Your Standard Server IP):")
-bijc=open("banned-ips.json", "w+")
-bije=open("banned-ips.json", "a+")
-bije.write("[]")
-print("Done!")
-print("Creating ops.json")
-opsjc=open("ops.json", "w+")
-opsje=open("ops.json", "a+")
-opsje.write("[]")
-print("Done!!")
-#done with creating ops.json
-print("Creating banned-players.json")
-bpjc=open("banned-players.json", "w+")
-bpje=open("banned-players.json", "a+")
-bpje.write("[]")
-print("Done")
-#done With creating banned-players.json
-print("Creating EULA(End User[s] Licence Agreement).txt")
-eulac=open("eula.txt", "w+")
-eulae=open("eula.txt", "a+")
-eulae.write("""#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
-#Fri Sep 04 11:20:58 CDT 2020
-eula=TRUE""")
-print("Done! (Auto Agreed To The EULA)")
-#Done!
-print("Creating server.properties")
-spc=open("server.properties", "w+")
-spe=open("server.properties", "a+")
-spe.write("""#Minecraft server properties")
-#Fri Sep 04 11:56:03 CDT 2020")
-enable-jmx-monitoring=false
-rcon.port=25575
-level-seed=
-gamemode=survival
-enable-command-block=false
-enable-query=false
-generator-settings=
-level-name=world
-motd=A Minecraft Server
-query.port=25565
-pvp=true
-generate-structures=true
-difficulty=easy
-network-compression-threshold=256
-max-tick-time=60000
-use-native-transport=true
-max-players=20
-online-mode=true
-enable-status=true
-allow-flight=false
-broadcast-rcon-to-ops=true
-view-distance=10
-max-build-height=256
-server-ip=" + ips)
-allow-nether=true
-server-port=25565
-enable-rcon=false
-sync-chunk-writes=true
-op-permission-level=4
-prevent-proxy-connections=false
-resource-pack=
-entity-broadcast-range-percentage=100
-rcon.password=
-player-idle-timeout=0
-force-gamemode=false
-rate-limit=0
-hardcore=false
-white-list=false
-broadcast-console-to-ops=true
-spawn-npcs=true
-spawn-animals=true
-snooper-enabled=true
-function-permission-level=2
-level-type=default
-spawn-monsters=true
-enforce-whitelist=false
-resource-pack-sha1=
-spawn-protection=16
-max-world-size=29999984
-print("Done!!!")
-print("Creating usercache.json")
-ucjc=open("usercache.json", "w+")
-ucje=open("usercache.json", "a+")
-ucje.write("[]")""")
-print("Done!")
-print('Creating "Click To Start Minecraft Server"')
-ctsmcsbc=open("Click To Start Minecraft Server.bat", "w+")
-ctsmcsbe=open("Click To Start Minecraft Server.bat", "a+")
-ctsmcsbe.write("java -Xmx1024M -Xms1024M -jar server.jar nogui")
-ctsmcsbe.write("pause")
-print("Done!")
-#Done!
-url = "https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar"
-r = requests.get(url, allow_redirects=True)
+whitelistjsonurl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/whitelist.json"
+usercachejsonurl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/usercache.json"
+ssbaturl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/StartServer.bat"
+serverpropertiesurl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/server.properties"
+opsjsonurl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/ops.json"
+eulatxturl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/eula.txt"
+bannedplayersjsonurl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/banned-players.json"
+bannedipsjsonurl = "https://the-real-fileio.samitmohnot.repl.co/mcfiles/banned-ips.json"
+serverjarurl = "https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar"
+r = requests.get(serverjarurl, allow_redirects=True)
 open('server.jar', 'wb').write(r.content)
+r = requests.get(bannedipsjsonurl, allow_redirects=True)
+open('banned-ips.json', 'wb').write(r.content)
+
+r = requests.get(bannedplayersjsonurl, allow_redirects=True)
+open('banned-players.json', 'wb').write(r.content)
+
+r = requests.get(eulatxturl, allow_redirects=True)
+open('eula.txt', 'wb').write(r.content)
+
+r = requests.get(opsjsonurl, allow_redirects=True)
+open('ops.json', 'wb').write(r.content)
+
+r = requests.get(serverpropertiesurl, allow_redirects=True)
+open('server.properties', 'wb').write(r.content)
+
+r = requests.get(ssbaturl, allow_redirects=True)
+open('StartServer.bat', 'wb').write(r.content)
+
+r = requests.get(usercachejsonurl, allow_redirects=True)
+open('usercache.json', 'wb').write(r.content)
+
+r = requests.get(whitelistjsonurl, allow_redirects=True)
+open('whitelist.json', 'wb').write(r.content)
+print("Done")
+yon = input("Would You Like To Start Server Now?? Y/N (Case Sensitive)")
+if yon == Y:
+    os.system("StartServer.bat")
+else :
+    print("Ok, Bye the installer will close in 10 seconds!")
+    time.sleep(11)
+    quit()
