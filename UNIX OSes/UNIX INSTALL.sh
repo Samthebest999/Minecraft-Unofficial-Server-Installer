@@ -9,3 +9,4 @@ wget "https://the-real-fileio.samitmohnot.repl.co/mcfiles/eula.txt"
 wget "https://the-real-fileio.samitmohnot.repl.co/mcfiles/banned-players.json"
 wget "https://the-real-fileio.samitmohnot.repl.co/mcfiles/banned-ips.json"
 wget "https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar"
+java -Xmx1024M -Xms1024M -jar server.jar
