@@ -8,3 +8,4 @@ BUT if YOU use LINUX/FEDORA/CENTOS... You can use the code in the UNIX Folder. I
 
 Thanks For Using the unofficial super fast server installer!
 ============================================================
+YOU MUST HAVE AN INTERNET CONNECTION!!!
