@@ -1,7 +1,6 @@
 echo "Would you like to start the installation?? Y/N (case sensitive)"
 read si
-if [si = Y]
-then
+if [si = Y]; then
 	sudo apt update && sudo apt full-upgrade
 	sudo apt install standard-jdk -y
 	wget "https://the-real-fileio.samitmohnot.repl.co/mcfiles/whitelist.json"
@@ -26,3 +25,4 @@ else
 	echo "Bye the installer will close in 10 seconds"
 	sleep 11
 	exit
+fi
