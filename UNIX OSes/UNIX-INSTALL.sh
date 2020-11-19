@@ -9,5 +9,5 @@ then
   wget https://The-Real-Fileio.samitmohnot.repl.co/mcfiles/getfiles.py
   python3 getfiles.py
   rm getfiles.py
-else
-    exit
+  rm UNIX-INSTALL.sh
+fi
